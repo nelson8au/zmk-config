@@ -18,15 +18,13 @@
 #define DEFAULT 0
 #define NUMBER 1
 #define SYMBOL 2
-#define FUNCTION 3
-#define MEDIA 4
-#define MOUSE 5
+#define MEDIA 3
 // combinadas para optimizar espacio
-#define MEDIA_ESC &lt MEDIA ESC
-#define MOUSE_TAB &lt MOUSE TAB
+//#define MEDIA_ESC &lt MEDIA ESC
+//#define MOUSE_TAB &lt MOUSE TAB
 #define NUMBER_SPACE &lt NUMBER SPACE
-#define SYMBOL_RGUI &lt SYMBOL RGUI
-#define FUNCTION_RALT &lt FUNCTION RALT
+#define SYMBOL_COMMA &lt SYMBOL COMMA
+#define MEDIA_DOT &lt MEDIA DOT
 // default_layer
 #define LSHFT_COMMA &mt LSHFT COMMA
 // function_layer
@@ -80,16 +78,16 @@ name: name##_macro {                \
          //    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //    |LT5 TAB |   A   |   S   |   D   |   F   |   G   |                         |   H   |   J   |   K   |   L   |  UP   |   ENTER |
          //    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //    |SHIFT   |   Y   |   X   |   C   |   V   |   B   |                         |   N   |   M   |   ;   |  LEFT |  DOWN |   RIGHT |
+         //    |CAPS_LK |   Y   |   X   |   C   |   V   |   B   |                         |   N   |   M   |   ;   |  LEFT |  DOWN |   RIGHT |
          //    '---------------------------------------------------------|       |----------------------------------------------------------'
          //                             |  CTRL    |  CMD   |    ALT     |       | LT1 SPACE | LT2 ,     | LT3 .   |
          //                             '--------------------------------'       '----------------------------------'
          // label = "DEFAULT";
          bindings = <
-            MEDIA_ESC   DE_Q   DE_W   DE_E   DE_R      DE_T                            DE_Z        DE_U  DE_I         DE_O     DE_P     DE_BSPC
-            MOUSE_TAB   DE_A   DE_S   DE_D   DE_F      DE_G                            DE_H        DE_J  DE_K         DE_L     DE_UP    DE_RET
-            DE_LSHFT    DE_Y   DE_X   DE_C   DE_V      DE_B                            DE_N        DE_M  LSHFT_COMMA  DE_LEFT  DE_DOWN  DE_RIGHT
-                                             DE_LCTRL  DE_LGUI  DE_RALT  NUMBER_SPACE  SYMBOL_RGUI  FUNCTION_RALT
+            &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T                            &kp Z        &kp U  &kp I         &kp O   &kp P     &kp BSPC
+            &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G                            &kp H        &kp J  &kp K         &kp L     &kp UP    &kp RET
+            &kp LSHFT  &kp Y   &kp X   &kp C   &kp V      &kp B                            &kp N       &kp M  &kp SEMI  &kp LEFT  &kp DOWN  &kp RIGHT
+                                             &kp LCTRL  &kp LGUI  &kp RALT  NUMBER_SPACE  SYMBOL_COMMA  MEDIA_DOT
             >;
       };
       // }}}}
@@ -106,10 +104,10 @@ name: name##_macro {                \
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            DE_0      DE_1   DE_2   DE_3    DE_MINS   DE_PLUS                     DE_SS    DE_UDIA  DE_ADIA      DE_ODIA XXX   DE_BSPC
-            DE_CAPS   DE_4   DE_5   DE_6    DE_SLSH   DE_ASTR                     DE_HASH  DE_TILD  DE_QUES  DE_AT   DE_UP    DE_RET
-            DE_LSHFT  DE_7   DE_8   DE_9    DE_PERC   DE_EQL                    DE_DOT   DE_ACUT  DE_GRV     DE_LEFT  DE_DOWN  DE_RIGHT
-                                            DE_LCTRL  DE_LGUI    DE_SPACE   XXX   DE_LSHFT DE_RALT
+            &kp N0      &kp N1   &kp N2  &kp N3    &kp MINUS   &kp PLUS                     XXX  XXX  XXX  XXX  XXX  &kp DEL
+            &kp CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH   &kp KP_MULTIPLY               XXX  XXX  XXX  XXX  &kp PG_UP  XXX
+            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   &kp EQUAL                    XXX  XXX  XXX  &kp HOME  &kp PG_DN  &kp END
+                                            &kp LCTRL  &kp LGUI  &kp RALT    &kp SPACE  XXX  XXX
             >;
       };
       // }}}
@@ -127,37 +125,37 @@ name: name##_macro {                \
          // label = "SYMBOL";
          bindings = <
             DE_DLR   DE_LPRN  DE_RPRN   DE_LBRC  DE_RBRC    DE_TILD                    DE_ACUT  DE_GRV  XXX  XXX  XXX   DE_BSPC
-            DE_PERC  DE_LCBR  DE_RCBR   DE_CARET DE_PG_UP   DE_HASH                    DE_AMPR  DE_PIPE   XXX  XXX  DE_UP    DE_RET
-            DE_LSHFT DE_LABK  DE_RABK   DE_HOME  DE_PG_DN   DE_END                     DE_TILD  DE_QUOT   XXX  DE_LEFT  DE_DOWN  DE_RIGHT
+            DE_PERC  DE_LCBR  DE_RCBR   DE_CARET &kp PRCNT   DE_HASH                    DE_AMPR  DE_PIPE   XXX  XXX  DE_UP    XXX
+            &kp LBKT &kp RBKT  DE_RABK   DE_HOME  &kp BSLH   &kp PIPE                     DE_TILD  DE_QUOT   &kp GRAVE  &kp TILDE  &kp FSLH  DE_RIGHT
                                                  DE_LCTRL   DE_LGUI  DE_SPACE  DE_RET  DE_RALT  DE_LCTRL
             >;
       };
       // }}}
-      // ### function_layer {{{
-      function_layer {
+      // ### media_layer {{{
+      media_layer {
          // .------------------------------------------------.                         .-------------------------------------------------.
-         // | BRI_DN | BRI_UP|   F3  |   F4  |       |       |                         |  PREV | PY/P  | NEXT  |  MUTE |VOL_DN |  VOL_UP |
+         // | BRI_DN | BRI_UP|   F3  |   F4  |SC_SHOT|EP_TOG |                         |  PREV | PY/P  | NEXT  |  MUTE |VOL_DN |  VOL_UP |
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         // |    F5  |  F6   |   F7  |    F8 |   \   |       |                         |C-A-DEL|DE_F19 |DE_F20 |       |PAGE_UP|         |
+         // |RGBBRI- |RGBBRI+|RGBSAT-|RGBSAT+|RGBHUE-|RGBHUE+|                         |BT_CLR |  BT_0 |  BT_1 |  BT_2 |  BT_3 |  BT_4   |
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         // |    F9  |   F10 |   F11 |   F12 |       | EMOJI |                         |L_SHIFT|L_SHIFT|R_SHIFT|  HOME |PAGE_DO|    END  |
+         // |        |       |       |       |       | EMOJI |                         |       |       |       |       |       |    END  |
          // '----------------------------------------------------------|       |----------------------------------------------------------'
-         //                           |  CTRL    |  CMD       |   ALT  |       |  TAB   |   ´   |          CTRL |
+         //                           |  CTRL |  CMD |       ALT       |       |       SPACE   |   ´   |        |
          //                           '--------------------------------'       '--------------------------------'
          // LCTL(LGUI(KC_D)), LCTL(LGUI(KC_SPC))
          // label = "FUNCTION";
          bindings = <
-            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX  XXX XXX    XXX   DE_BRI_DN  DE_BRI_UP
-            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   TASKM     &example  &mctechnology &linea  DE_PG_UP   XXX
-            DE_F9  DE_F10  DE_F11  DE_F12   CLIPBRD  EMOJI                     DE_LSHFT  DE_LSHFT  DE_RSHFT DE_HOME DE_PG_DN   DE_END
+            DE_F1  DE_F2   DE_F3   DE_F4    SPELL    TRADUCT                   XXX  XXX  XXX  XXX   DE_BRI_DN  DE_BRI_UP
+            DE_F5  DE_F6   DE_F7   DE_F8    DE_BSLS  SNIPPET                   &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
+            DE_F9  DE_F10  DE_F11  DE_F12   CLIPBRD  EMOJI                      XXX  XXX  XXX  XXX  XXX   DE_END
                                             DE_LCTRL DE_LGUI  DE_LALT  DE_TAB  DE_ACUT   DE_LCTRL
                                  >;
                          };
       // }}}
       // ### media_layer {{{
-      media_layer {
+      mediaa_layer {
          // .------------------------------------------------.                         .-------------------------------------------------.
-         // |        |SC_FLOW|TXTSNIP|SC_SHOT|OP_TERM|       |                         |POS1   |POS2   | | | STOP  |  DELETE |
+         // |        | ||SC_SHOT||       |                         |POS1   |POS2   | | | STOP  |  DELETE |
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          // |        |SC_SPSF|SC_RE  |       |       |       |                         |POS3   |POS4   |LANG_3 |SHUFFLE|VOL_UP |PLAY/PAUS|
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
