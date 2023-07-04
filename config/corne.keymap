@@ -151,5 +151,5 @@ name: name##_macro {                \
                                             DE_LCTRL DE_LGUI  DE_LALT  DE_TAB  DE_ACUT   DE_LCTRL
                                  >;
                          };
-    
+    	};
 };
