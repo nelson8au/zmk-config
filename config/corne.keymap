@@ -74,11 +74,11 @@ name: name##_macro {                \
       // ### default_layer {{{
       default_layer {
          //    .------------------------------------------------.                         .-------------------------------------------------.
-         //    |LT4 ESC |   Q   |   W   |   E   |   R   |   T   |                         |   Z   |   U   |   I   |   O   |   P   | BACKSPC |
+         //    | ESC |   Q   |   W   |   E   |   R   |   T   |                         |   Z   |   U   |   I   |   O   |   P   | BACKSPC |
          //    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //    |LT5 TAB |   A   |   S   |   D   |   F   |   G   |                         |   H   |   J   |   K   |   L   |  UP   |   ENTER |
+         //    | TAB |   A   |   S   |   D   |   F   |   G   |                         |   H   |   J   |   K   |   L   |  UP   |   ENTER |
          //    |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //    |CAPS_LK |   Y   |   X   |   C   |   V   |   B   |                         |   N   |   M   |   ;   |  LEFT |  DOWN |   RIGHT |
+         //    |SHIFT|   Y   |   X   |   C   |   V   |   B   |                         |   N   |   M   |   ;   |  LEFT |  DOWN |   RIGHT |
          //    '---------------------------------------------------------|       |----------------------------------------------------------'
          //                             |  CTRL    |  CMD   |    ALT     |       | LT1 SPACE | LT2 ,     | LT3 .   |
          //                             '--------------------------------'       '----------------------------------'
@@ -104,10 +104,10 @@ name: name##_macro {                \
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            &kp N0      &kp N1   &kp N2  &kp N3    &kp MINUS   &kp PLUS                     XXX  XXX  XXX  XXX  XXX  &kp DEL
-            &kp CAPS   &kp N4   &kp N5   &kp N6    &kp FSLH   &kp KP_MULTIPLY               XXX  XXX  XXX  XXX  &kp PG_UP  XXX
-            &kp LSHFT  &kp N7   &kp N8   &kp N9    &kp PRCNT   &kp EQUAL                    XXX  XXX  XXX  &kp HOME  &kp PG_DN  &kp END
-                                            &kp LCTRL  &kp LGUI  &kp RALT    &kp SPACE  XXX  XXX
+            &kp KP_N0  &kp KP_N1   &kp KP_N2  &kp KP_N3    &kp KP_MINUS   &kp KP_PLUS                     XXX  XXX  XXX  XXX  XXX  &kp DEL
+            &kp CAPS   &kp KP_N4   &kp KP_N5   &kp KP_N6    &kp KP_DIVIDE  &kp KP_MULTIPLY               XXX  XXX  XXX  XXX  &kp PG_UP  XXX
+            &kp LSHFT  &kp KP_N7   &kp KP_N8   &kp KP_N9    &kp PRCNT   &kp EQUAL                    XXX  XXX  XXX  &kp HOME  &kp PG_DN  &kp END
+                                            &kp LCTRL  &kp LGUI  &kp RALT                                 &kp SPACE  XXX  XXX
             >;
       };
       // }}}
@@ -124,10 +124,10 @@ name: name##_macro {                \
          //                           '--------------------------------'       '--------------------------------'
          // label = "SYMBOL";
          bindings = <
-            DE_DLR   DE_LPRN  DE_RPRN   DE_LBRC  DE_RBRC    DE_TILD                    DE_ACUT  DE_GRV  XXX  XXX  XXX   DE_BSPC
-            DE_PERC  DE_LCBR  DE_RCBR   DE_CARET &kp PRCNT   DE_HASH                    DE_AMPR  DE_PIPE   XXX  XXX  DE_UP    XXX
-            &kp LBKT &kp RBKT  DE_RABK   DE_HOME  &kp BSLH   &kp PIPE                     DE_TILD  DE_QUOT   &kp GRAVE  &kp TILDE  &kp FSLH  DE_RIGHT
-                                                 DE_LCTRL   DE_LGUI  DE_SPACE  DE_RET  DE_RALT  DE_LCTRL
+            &kp F1   &kp F2  &kp F4   &kp F4  &kp F5    &kp F6                    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11   &kp F12
+            &kp EXCL  &kp AT  &kp HASH   &kp DLLR &kp PRCNT   &kp CARET                    &kp AMPS  &kp STAR   &kp LPA  &kp RPAR  &kp UNDER    XXX
+            &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT  &kp BSLH   &kp PIPE                     &kp SQT  &kp DQT  &kp GRAVE  &kp TILDE  &kp FSLH  DE_RIGHT
+                                                 &kp LCTRL  &kp LGUI  &kp RALT  &kp SPACE  XXX  XXX
             >;
       };
       // }}}
@@ -151,77 +151,5 @@ name: name##_macro {                \
                                             DE_LCTRL DE_LGUI  DE_LALT  DE_TAB  DE_ACUT   DE_LCTRL
                                  >;
                          };
-      // }}}
-      // ### media_layer {{{
-      mediaa_layer {
-         // .------------------------------------------------.                         .-------------------------------------------------.
-         // |        | ||SC_SHOT||       |                         |POS1   |POS2   | | | STOP  |  DELETE |
-         // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         // |        |SC_SPSF|SC_RE  |       |       |       |                         |POS3   |POS4   |LANG_3 |SHUFFLE|VOL_UP |PLAY/PAUS|
-         // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         // |        |       |       |       |       |       |                         |       |       |  MUTE |  PREV |VOL_DOW|  NEXT   |
-         // '---------------------------------------------------------|       |----------------------------------------------------------'
-         //                          |  CTRL    |  CMD       |   ALT  |       |  SPACE | ALTGR |          CTRL |
-         //                          '--------------------------------'       '--------------------------------'
-         // label = "MEDIA";
-         bindings = <
-            XXX  SC_FLOW  TXTSNIP  SC_SHOT OP_TERM   XXX                         POS1  POS2  DE_LANG1  DE_LANG2    DE_STOP    DE_DEL
-            XXX  SC_SPSF  SC_RE    XXX     XXX       XXX                         POS3  POS4  DE_LANG3  DE_SHUFFLE  DE_VOL_UP  DE_PLAY
-            XXX  XXX      XXX      XXX     XXX       XXX                         XXX   XXX   DE_MUTE   DE_PREV     DE_VOL_DN  DE_NEXT
-                                           DE_LCTRL  DE_LGUI  DE_LALT  DE_SPACE  DE_RALT DE_LCTRL
-                                 >;
-                         };
-      // }}}
-#ifdef CONFIG_ZMK_RGB_UNDERGLOW
-      // ### mouse_layer {{{
-      mouse_layer {
-         //   .------------------------------------------------.                         .-------------------------------------------------.
-         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |RGBBRI-|RGBBRI+|WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |        |CLICK_1|CLICK_2|CLICK_3|BT_PRV | BT_NXT|                         |RGBSAT-|RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |RGBHUE-|RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
-         //   '---------------------------------------------------------|       |----------------------------------------------------------'
-         //                            |EP_OFF  | EP_ON|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
-         //                            '--------------------------------'       '--------------------------------'
-         // label = "MOUSE";
-         // XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG                                  &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15) &mwh SCROLL_HOR(15)  &mwh SCROLL_DOWN  &mwh SCROLL_UP
-         // XXX &mkp LCLK &mkp RCLK &mkp MCLK &bt BT_PRV &bt BT_NXT                              &rgb_ug RGB_SAD    &rgb_ug RGB_SAI   XXX  XXX  &mmv MOVE_VERT(-2500)  XXX
-         // &bt BT_CLR   &bt BT(0) &bt BT(1) &bt BT(2) &bt BT(3) &bt BT(4)                       &rgb_ug RGB_HUD    &rgb_ug RGB_HUI  &reset  &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500) &mmv MOVE_HOR(2500)
-         //                         &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG    &rgb_ug RGB_EFR    &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-         bindings = <
-            XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG                                  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   XXX  XXX  XXX  XXX
-            XXX XXX XXX &bt BT_CLR &bt BT_PRV &bt BT_NXT                                         &rgb_ug RGB_SAD    &rgb_ug RGB_SAI   XXX  XXX  XXX  XXX
-            &bt BT_CLR   &bt BT(0) &bt BT(1) &bt BT(2) &bt BT(3) &bt BT(4)                       &rgb_ug RGB_HUD    &rgb_ug RGB_HUI  &reset  XXX  XXX  XXX
-                                    &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG    &rgb_ug RGB_EFR    &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-                                 >;
-                         };
-      // }}}
-#else
-      // ### mouse_layer {{{
-      mouse_layer {
-         //   .------------------------------------------------.                         .-------------------------------------------------.
-         //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |       |       |WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |        |CLICK_1|CLICK_2|CLICK_3|BT_PRV | BT_NXT|                         |       |       |       |CLICK_1| UP    |CLICK_2  |
-         //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |       |       |       | LEFT  | DOWN  | RIGHT   |
-         //   '---------------------------------------------------------|       |----------------------------------------------------------'
-         //                            |EP_OFF  | EP_ON|         EP_TOG |       |       |        |               |
-         //                            '--------------------------------'       '--------------------------------'
-         // label = "MOUSE";
-         // XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG                                  &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15) &mwh SCROLL_HOR(15)  &mwh SCROLL_DOWN  &mwh SCROLL_UP
-         // XXX &mkp LCLK &mkp RCLK &mkp MCLK &bt BT_PRV &bt BT_NXT                              XXX  XXX XXX    XXX                  &mmv MOVE_VERT(-2500)   XXX
-         // &bt BT_CLR   &bt BT(0) &bt BT(1) &bt BT(2) &bt BT(3) &bt BT(4)                       XXX  XXX &reset &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500) &mmv MOVE_HOR(2500)
-         //                         &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG    XXX  XXX  XXX
-         bindings = <
-            XXX XXX XXX &out OUT_USB &out OUT_BLE  &out OUT_TOG                                  XXX  XXX XXX XXX  XXX XXX
-            XXX XXX XXX XXX &bt BT_PRV &bt BT_NXT                                                XXX  XXX XXX XXX  XXX XXX
-            &bt BT_CLR   &bt BT(0) &bt BT(1) &bt BT(2) &bt BT(3) &bt BT(4)                       XXX  XXX XXX XXX  XXX XXX
-                                    &ext_power EP_OFF    &ext_power EP_ON   &ext_power EP_TOG    XXX  XXX  XXX
-                                 >;
-                         };
-      // }}}
-#endif // CONFIG_ZMK_RGB_UNDERGLOW
-   };
+    
 };
