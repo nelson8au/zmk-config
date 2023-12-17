@@ -39,7 +39,6 @@
 #define ZCOPY &kp LG(C)
 #define ZCUT &kp LG(X)
 #define ZUNDO &kp LG(Z)
-#define ZREDO &kp LG(LS(Z))
 #define ZPASTE &kp LG(V)
 
 // media_layer
