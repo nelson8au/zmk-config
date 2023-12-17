@@ -35,12 +35,12 @@
 #define CLIPBRD &kp LA(LG(V))
 #define EMOJI &kp LC(LG(SPACE))
 #define TASKM &kp LC(LA(DEL)) // C-A-DEL
-#define ALL &kp LCMD(ALL)
-#define COPY &kp LCMD(C)
-#define CUT &kp LCMD(X)
-#define UNDO &kp LCMD(Z)
-#define REDO &kp LCMD(LS(Z))
-#define PASTE &kp LCMD(V)
+#define ALL1 &kp LCMD(ALL)
+#define COPY1 &kp LCMD(C)
+#define CUT1 &kp LCMD(X)
+#define UNDO1 &kp LCMD(Z)
+#define REDO1 &kp LCMD(LS(Z))
+#define PASTE1 &kp LCMD(V)
 
 // media_layer
 #define SC_FLOW &kp LS(LG(NUMBER_1)) // <S-D-1> ScrenFlow app for MacOS
@@ -156,7 +156,7 @@ name: name##_macro {                \
          bindings = <
             			    &kp C_BRI_DN  &kp C_BRI_UP  XXX  XXX  SC_SHOT  &ext_power EP_TOG                    &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_MUTE   &kp C_VOLUME_DOWN  &kp C_VOL_UP
 &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI			&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-            				     			     XXX  XXX  XXX  XXX   XXX  EMOJI               	ALL  COPY  CUT  PASTE  UNDO  REDO  
+            				     			     XXX  XXX  XXX  XXX   XXX  EMOJI               	ALL1  COPY1  CUT1  PASTE1  UNDO1  REDO1  
                                                   			    &kp LCTRL &kp LGUI  &kp LALT       	&kp SPACE XXX   XXX
                                  >;
                          };
