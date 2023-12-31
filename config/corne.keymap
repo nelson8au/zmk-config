@@ -41,7 +41,8 @@
 #define ZUNDO &kp LG(Z)
 #define ZPASTE &kp LG(V)
 #define ZREDO &kp LG(LS(Z))
-
+#define ZSUSP &kp LC(Z)
+#define ZKILL &kp LC(C)
 // media_layer
 #define SC_FLOW &kp LS(LG(NUMBER_1)) // <S-D-1> ScrenFlow app for MacOS
 #define TXTSNIP &kp LS(LG(NUMBER_2)) // <S-D-2> TextSniper app for MacOS
@@ -102,7 +103,7 @@ name: name##_macro {                \
       // ### number_layer {{{
       number_layer {
          //   .-------------------------------------------------.                         .-------------------------------------------------.
-         //   |   0     |   1   |   2   |   3   |   -   |   +   |                         |       |       |       |       |       | DELETE  |
+         //   |   0     |   1   |   2   |   3   |   -   |   +   |                         |   <   |   >   |       |       |       | DELETE  |
          //   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          //   |CAPS_LOCK|   4   |   5   |   6   |   /   |   *   |                         |       |       |       |       |PAGE_UP|   	    |
          //   |---------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
@@ -112,7 +113,7 @@ name: name##_macro {                \
          //                             '--------------------------------'       '--------------------------------'
          // label = "NUMBER";
          bindings = <
-            &kp KP_N0  &kp KP_N1   &kp KP_N2  &kp KP_N3    &kp KP_MINUS   &kp KP_PLUS                     XXX  XXX  XXX  XXX  XXX  &kp DEL
+            &kp KP_N0  &kp KP_N1   &kp KP_N2  &kp KP_N3    &kp KP_MINUS   &kp KP_PLUS                     &kp LESS_THAN  &kp GREATER_THAN  XXX  XXX  XXX  &kp DEL
             &kp CAPS   &kp KP_N4   &kp KP_N5   &kp KP_N6    &kp KP_DIVIDE  &kp KP_MULTIPLY               XXX  XXX  XXX  XXX  &kp PG_UP  XXX
             &kp LSHFT  &kp KP_N7   &kp KP_N8   &kp KP_N9    &kp PRCNT   &kp EQUAL                    XXX  XXX  XXX  &kp HOME  &kp PG_DN  &kp END
                                             &kp LCTRL  &kp LGUI  &kp LALT                                 &kp SPACE  XXX  XXX
@@ -146,7 +147,7 @@ name: name##_macro {                \
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
          // |RGBBRI- |RGBBRI+|RGBSAT-|RGBSAT+|RGBHUE-|RGBHUE+|                         |BT_CLR |  BT_0 |  BT_1 |  BT_2 |  BT_3 |  BT_4   |
          // |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
-         // | LANG   |       |       |       |       | EMOJI |                         |  ALL  |  COPY |  CUT  | PASTE |  UNDO |   REDO  |       
+         // | CTRL-Z |CTRL-C |       |       | EMOJI |       |                         |  ALL  |  COPY |  CUT  | PASTE |  UNDO |   REDO  |       
          // '----------------------------------------------------------|       |----------------------------------------------------------'
          //                           |  CTRL |  CMD |       ALT       |       |       SPACE   |       |        |
          //                           '--------------------------------'       '--------------------------------'
@@ -156,7 +157,7 @@ name: name##_macro {                \
          bindings = <
             			    &kp C_BRI_DN  &kp C_BRI_UP  XXX  XXX  SC_SHOT  &ext_power EP_TOG                    &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_MUTE   &kp C_VOLUME_DOWN  &kp C_VOL_UP
 &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI			&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-            				     			      XXX  XXX  XXX  XXX  XXX  EMOJI               	ZALL  ZCOPY  ZCUT  ZPASTE  ZUNDO  ZREDO  
+            				     			      ZSUSP  ZKILL  XXX  XXX  XXX  EMOJI               	ZALL  ZCOPY  ZCUT  ZPASTE  ZUNDO  ZREDO  
                                                   			    &kp LCTRL &kp LGUI  &kp LALT       	&kp SPACE XXX   XXX
                                  >;
                          };
